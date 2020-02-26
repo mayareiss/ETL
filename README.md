@@ -9,16 +9,29 @@ This ETL project collected luxury bag data from online secondary markets, specif
 Project steps:
 
 1.	Extraction - I selected ten of the top most popular designers available on the secondary market, according to https://www.businessinsider.com/the-realreal-most-popular-brands-resale-list-2019-8. For each designer, I ran two scrapers:
-a.	Ebay:
+
+Ebay:
 Starting with an existing publicly available ebay scraper (https://github.com/cpatrickalves/scraping-ebay), which contains a script to scrape eBay product data using scrapy, I modified the search columns to include the name of the item, the item status, the price, as well as the shipping cost, time remaining on the auction, number of bis, as well as the url for the item. I ran the code in terminal for the top ten most searched luxury brands per a report by the RealReal (https://promotion.therealreal.com/resale-report-2019/), a leading online luxury secondary market retailer. The files were saved as csv
-b.	Rebag:
-Ran a scraper to pull live data of available bags for sale from ten different designers. The scraper pulled the name of the bag, the price point, the designer name and the url page from where it was scraped. The files were saved as json
-2.	Transform
-a.	Utilized Pandas functions in Jupyter notebook to upload each file
-b.	Reviewed files and turned into dataframes
-c.	Cleaned up data to remove duplicates, extraneous columns and reset index
-d.	Extracted information from data and added new columns to represent bag type and material
+
+Rebag:
+Ran a scraper to pull live data of available bags for sale from ten different designers. The scraper pulled the name of the bag, the price point, the designer name and the url page from where it was scraped. The files were saved as json.
+
+2.	Transform:
+
+Utilized Pandas functions in Jupyter notebook to upload each file
+    
+Reviewed files and turned into dataframes
+    
+Cleaned up data to remove duplicates, extraneous columns and reset index
+    
+Extracted information from data and added new columns to represent bag type and material
+
+Merged the two separate files into one large file containing all data
 
 3.	Load
+
+The final stage was loading the file of all data into Postgres using SQL Alchemy
+
+  
 
 
